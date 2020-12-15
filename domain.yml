@@ -1,0 +1,122 @@
+session_config:
+  session_expiration_time: 1000
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- inquiry_dictionary
+- inquiry_comparison
+- inquiry_culture
+- inquiry_translation
+#- inquiry_grammar
+- dictionary
+- translation
+- comparison
+#- grammar
+- culture
+- chitchat
+
+entities:
+- name
+- entry
+- compare_1
+- compare_2
+slots:
+  compare_1:
+    type: any
+    influence_conversation: false
+  compare_2:
+    type: any
+    influence_conversation: false
+  entry:
+    type: text
+    influence_conversation: false
+  name:
+    type: text
+    initial_value: My friend
+    influence_conversation: false
+responses:
+  utter_greet:
+  - buttons:
+    - payload: /culture
+      title: culture
+    - payload: /dictionary
+      title: dictionary
+    - payload: /translation
+      title: translation
+#    - payload: /grammar
+#      title: grammar
+    - payload: /comparison
+      title: comparison
+    text: Hey! {name}. I am CopticTutor, a bot helping people learn Coptic language
+      and culture. Please choose the categories you'd like to inquiry.
+  - buttons:
+    - payload: /culture
+      title: culture
+    - payload: /dictionary
+      title: dictionary
+    - payload: /translation
+      title: translation
+#    - payload: /grammar
+#      title: grammar
+    - payload: /comparison
+      title: comparison
+    text: Hello! {name}. I am CopticTutor, a bot helping people learn Coptic language
+      and culture. Please choose the categories you'd like to inquiry.
+  - buttons:
+    - payload: /culture
+      title: culture
+    - payload: /dictionary
+      title: dictionary
+    - payload: /translation
+      title: translation
+#    - payload: /grammar
+#      title: grammar
+    - payload: /comparison
+      title: comparison
+    text: Welcome! {name}. I am CopticTutor, a bot helping people learn Coptic language
+      and culture. Please choose the categories you'd like to inquiry.
+  utter_goodbye:
+  - text: Bye
+  utter_no_chitchat:
+  - text: Hey! You should talk about Coptic when you are chatting with a coptic language
+      learning bot.
+  utter_dict:
+  - text: Sure! Which word do you want to look up in the Coptic dictionary? E.g. 'What is the meaning of ⲙⲟⲩⲓ?'
+  utter_trans:
+    - text: Great! Which word would you like to translate into Coptic? E.g. 'Transalte student.'
+  utter_compare:
+  - text: Ok. Which Coptic words would you like to compare?
+#  utter_grammar:
+#  - text: Great! Which sentence would you like to analyze?
+  utter_culture:
+  - text: Cool! What would you like to know?
+  utter_answer_culture:
+  - text: Coptic is the latest stage of the Egyptian language, a northern Afro-Asiatic
+      language that was developed during the Greco-Roman period of Egyptian history,
+      and was spoken until at least the 17th century.
+  utter_question_type:
+  - buttons:
+    - payload: /culture
+      title: culture
+    - payload: /dictionary
+      title: dictionary
+    - payload: /translation
+      title: translation
+#    - payload: /grammar
+#      title: grammar
+    - payload: /comparison
+      title: comparison
+    text: Which type of question would you like to ask?
+  utter_thankyou:
+  - text: 'Ok. Thank you for using the chatbot. Hope to see you next time! 😊 Help
+      us makes CopticTutor better, please fill in this feedback form: https://forms.gle/SDd7Fh2Usu8fdK1x8'
+  utter_searching:
+  - text: Alright, I am on it 💪!
+  - text: Hang on! 💪 SEARCHING ...
+actions:
+- action_lookup
+- action_comparison
+- action_translation

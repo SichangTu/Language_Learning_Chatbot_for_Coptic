@@ -1,0 +1,95 @@
+version: "2.0"
+stories:
+
+- story: beginning of flow
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - checkpoint: check_question_type
+
+- story: culture question
+  steps:
+    - checkpoint: check_question_type
+    - intent: culture
+    - action: utter_culture
+    - intent: inquiry_culture
+    - action: utter_answer_culture
+    - checkpoint: check_another_inquiry
+
+- story: dictionary question
+  steps:
+    - checkpoint: check_question_type
+    - intent: dictionary
+    - action: utter_dict
+    - intent: inquiry_dictionary
+    - action: utter_searching
+    - action: action_lookup
+    - checkpoint: check_another_inquiry
+
+- story: translation question
+  steps:
+    - checkpoint: check_question_type
+    - intent: translation
+    - action: utter_trans
+    - intent: inquiry_translation
+    - action: utter_searching
+    - action: action_translation
+    - checkpoint: check_another_inquiry
+
+- story: comparison question
+  steps:
+    - checkpoint: check_question_type
+    - intent: comparison
+    - action: utter_compare
+    - intent: inquiry_comparison
+    - action: utter_searching
+    - action: action_comparison
+    - checkpoint: check_another_inquiry
+
+- story: another question
+  steps:
+    - checkpoint: check_another_inquiry
+    - intent: affirm
+    - action: utter_question_type
+    - checkpoint: check_question_type
+
+- story: end of flow
+  steps:
+    - checkpoint: check_another_inquiry
+    - intent: deny
+    - action: utter_thankyou
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: handle chitchat 1
+  steps:
+    - checkpoint: check_question_type
+    - intent: comparison
+    - action: utter_compare
+    - intent: chitchat
+    - action: utter_no_chitchat
+    - intent: inquiry_comparison
+    - action: action_comparison
+    - checkpoint: check_another_inquiry
+
+- story: handle chitchat 2
+  steps:
+    - checkpoint: check_question_type
+    - intent: dictionary
+    - action: utter_dict
+    - intent: chitchat
+    - action: utter_no_chitchat
+    - intent: inquiry_dictionary
+    - action: action_lookup
+    - checkpoint: check_another_inquiry
+
+- story: handle chitchat 3
+  steps:
+    - checkpoint: check_question_type
+    - intent: culture
+    - action: utter_culture
+    - intent: chitchat
+    - action: utter_no_chitchat
+    - intent: inquiry_culture
+    - action: utter_answer_culture
+    - checkpoint: check_another_inquiry

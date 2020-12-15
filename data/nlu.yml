@@ -1,0 +1,142 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hey, I am [Sam]{"entity": "name"}.
+    - hello, my name is [Jack]{"entity": "name"}
+    - hello
+    - hi, I am [Tu]{"entity": "name"}
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there, I'm [Liam]{"entity": "name"}
+    - let's go
+    - hey dude
+    - hey dude, Im [Peter]{"entity": "name"}
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - Hi
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - ok
+    - sure
+    - ok, I got it
+    - yeah
+- intent: chitchat
+  examples: |
+    - the weather is good
+    - do you know who I am?
+    - how are you?
+    - what's up?
+    - what's the weather today?
+    - can I ask you a question?
+    - I don't like you
+    - hahahhah
+    - tell me more about you
+    - how are you feeling today?
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: inquiry_dictionary
+  examples: |
+    - What is the meaning of ⲙⲟⲩⲓ?
+    - ⲛⲧⲉ
+    - What is ⲧⲁⲩⲟ supposed to mean?
+    - look up ⲣⲡⲉ
+    - What does ⲥⲙⲏ mean?
+    - tell me about ⲁⲣⲭⲏ
+    - explain ⲥⲱⲛⲧ
+    - what does ⲙⲟⲥⲧⲉ indicate?
+    - what does ⲉⲣⲏⲩ represent?
+    - what does ⲛⲟⲩⲧⲉ imply?
+    - the meaning of ⲁⲕⲣⲟⲁⲧⲏⲥ
+
+- intent: inquiry_translation
+  examples: |
+    - how to say [small] {"entity": "entry"} in Coptic?
+    - translate [father]{"entity": "entry"} into coptic
+    - what is [man]{"entity": "entry"} in Coptic language?
+    - how would you say [cool]{"entity": "entry"} in coptic
+    - [student]{"entity": "entry"}
+    - translate [sun]{"entity": "entry"}
+    - the translation of [god]{"entity": "entry"}
+    - [sweet]{"entity": "entry"} in coptic
+- intent: inquiry_comparison
+  examples: |
+    - What's the difference between [ⲛⲉ]{"entity": "compare_1"} and [ⲧⲉ]{"entity": "compare_2"}
+    - [ⲟⲩⲉⲓ]{"entity": "compare_1"} and [ⲟⲩⲁ]{"entity": "compare_2"}
+    - maybe [ⲙⲟⲩⲓ]{"entity": "compare_1"} and [ⲙⲟⲩ]{"entity": "compare_2"}
+    - How are [ⲟⲩ]{"entity": "compare_1"} and [ⲡ]{"entity": "compare_2"} different?
+    - compare [ⲗⲓⲙⲛⲏ]{"entity": "compare_1"} and [ⲑⲁⲗⲁⲥⲥⲁ]{"entity": "compare_2"}
+    - difference between [ⲛⲉ]{"entity": "compare_1"} and [ⲟⲩⲁ]{"entity": "compare_2"}
+    - How does [ⲣⲏ]{"entity": "compare_1"} differ from [ϧⲏⲓ]{"entity": "compare_2"}?
+    - how do you differentiate [ⲁⲅⲁⲑⲟⲥ]{"entity": "compare_1"} and [ⲁⲅⲅⲉⲗⲟⲥ]{"entity": "compare_2"}
+- intent: inquiry_culture
+  examples: |
+    - What is Coptic?
+    - tell me about Coptic.
+    - anything about Coptic
+    - what kind of language it is?
+    - Who speakes coptic?
+    - where is coptic originated from?
+    - Is Coptic a language?
+    - waht is coptic
+    - What is coptic
+#- intent: inquiry_grammar
+#  examples: |
+#    - How to analyze the sentence ⲛⲟⲩⲣⲣⲟ ⲟ ⲛⲧϩⲉ ⲙⲡⲁϣⲁϩ ⲟ ⲙⲛⲟⲩⲙⲟⲩⲓ ⲉϥϯⲥⲃⲱ ⲣⲱ ⲉⲩⲙⲛⲧⲁⲧⲛⲟⲩⲧⲉ ⲁⲩⲱ ⲡⲟⲥⲉ
+#    - show me the syntactic relation of ⲁϥⲧⲁⲁϥ ⲛⲇⲁⲛⲓⲏⲗ ϩⲙⲡϣⲏⲓ ⲛⲙⲙⲟⲩⲓ ⲛⲧⲟϥ ⲟⲛ ⲡⲉ ⲛⲧⲁϥⲁⲙⲁϩⲧⲉ
+#    - Draw a tree for ⲛϥⲉⲓ ⲉϩⲧⲟⲟⲩⲉ ⲛⲧⲛⲃⲱⲕ ⲉⲡⲣⲡⲉ ϩⲓⲟⲩⲥⲟⲡ
+- intent: dictionary
+  examples: |
+    - I choose dictionary
+    - dictionary
+    - /dictionary
+- intent: translation
+  examples: |
+    - I choose translation
+    - translation
+    - /translation
+- intent: comparison
+  examples: |
+    - I'd like to compare words
+    - comparison
+    - /comparison
+#- intent: grammar
+#  examples: |
+#    - I want to know grammar
+#    - grammar
+#    - /grammar
+- intent: culture
+  examples: |
+    - culture would be great
+    - culture
+    - /culture

@@ -1,0 +1,20 @@
+version: "2.0"
+stories:
+- story: happy path 1 (/var/folders/qh/wwryp21s02g52z18zz57_4lm0000gn/T/tmppjc_d6hp/9a874c9f148f4285a7639c59f568314c_test_stories.yml)
+  steps:
+  - intent: greet  # predicted: greet: hello there, I am [Tu](name)!
+  - action: utter_greet
+  - intent: culture
+  - action: utter_culture
+  - intent: inquiry_culture
+  - action: utter_answer_culture
+  - intent: affirm
+  - action: utter_question_type
+  - intent: dictionary
+  - action: utter_dict
+  - intent: inquiry_dictionary
+  - action: action_lookup  # predicted: utter_searching
+  - intent: deny
+  - action: utter_thankyou
+  - intent: goodbye
+  - action: utter_goodbye
