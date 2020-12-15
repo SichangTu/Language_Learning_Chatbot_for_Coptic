@@ -94,8 +94,7 @@ class Dictionary(object):
         sql_command += " AND ".join(constraints)
         sql_command += " ORDER BY ascii"
 
-        con = lite.connect(
-            '/Users/sichang/Documents/AllProjects/Coursework/Fall_2020/Dialogue_System/final_project/dictionary/alpha_kyima_rc1.db')
+        con = lite.connect('alpha_kyima_rc1.db')
 
         con.create_function("REGEXP", 2, lambda expr, item: re.search(expr.lower(), item.lower()) is not None)
         with con:
